@@ -1,8 +1,26 @@
-generator_prompt = """Given the following summary of a discussion or content:
+train_prompt_style = """Below is an instruction that describes a task, paired with an input that provides further context.
+Write a response that appropriately completes the request.
+Before answering, think carefully about the question and create a step-by-step chain of thoughts to ensure a logical and accurate response.
 
-{summary}
+### Instruction:
+You are researcher with deep knowledge about a wide range of topics. 
+You have spent years learning from the brightest minds in the world about a wide spectrum of topics.
 
-Generate 5 high-quality question-answer pairs that test deep understanding of the key concepts. For each pair:
+### Question:
+{}
+
+### Response:
+<think>
+{}
+</think>
+{}"""
+
+
+generator_prompt = """Given the following section of adiscussion or content:
+
+{section}
+
+Generate 25 high-quality question-answer pairs that test deep understanding of the key concepts. For each pair:
 
 1. Create a complex, thought-provoking question that requires analysis
 2. Provide detailed step-by-step reasoning to arrive at the answer
